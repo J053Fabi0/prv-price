@@ -1,5 +1,5 @@
 const variables = require("./utils/variables");
-const { usdtPRVPair } = require("./utils/constants");
+const { usdtPRVPair, maxPrices } = require("./utils/constants");
 const { moveDecimalDotString } = require("./utils/numbersStrings");
 const getFullpDEXStatusV3 = require("./utils/getFullpDEXStatusV3");
 
@@ -24,7 +24,16 @@ async function load() {
       usdtPRVPair
     ].State;
 
-    variables.price = parseFloat(moveDecimalDotString(Math.floor((usdt * 1_000 * prvDivider) / prv), -9));
+    // Insert the new price at the start of the prices array, and if the new size is greater than maxPrices,
+    // pop the last price.
+    if (
+      variables.prices.unshift(
+        parseFloat(moveDecimalDotString(Math.floor((usdt * 1_000 * prvDivider) / prv), -9))
+      ) > maxPrices
+    )
+      variables.prices.pop();
+
+    console.log(variables.prices);
   } catch (e) {
     console.error(e);
   }
