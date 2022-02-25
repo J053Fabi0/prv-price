@@ -1,18 +1,25 @@
 {
-  "name": "incognito-cli-js",
+  "name": "prv-price",
   "version": "1.0.0",
-  "description": "",
+  "description": " A simple API to get the latest prv-usd price based on the pUSDT-V3 pool. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J053Fabi0/prv-price.git"
+  },
+  "author": "Jose Fabio",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/J053Fabi0/prv-price/issues"
+  },
+  "homepage": "https://github.com/J053Fabi0/prv-price#readme",
   "dependencies": {
     "axios": "^0.26.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "ip": "^1.1.5",
-    "lodash": "^4.17.21"
+    "ip": "^1.1.5"
   }
 }
