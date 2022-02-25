@@ -5,11 +5,21 @@ const sleep = require("util").promisify(setTimeout);
 
 const a = {};
 
-a.getPrice = async (_, res) => {
+a.getLatestSinglePrice = async (_, res) => {
   try {
-    while (variables.price === 0) await sleep(100);
+    while (variables.latestSinglePrice === 0) await sleep(200);
 
-    res.send({ message: variables.price });
+    res.send({ message: variables.latestSinglePrice });
+  } catch (e) {
+    handleError(res, e);
+  }
+};
+
+a.getMeanPrice = async (_, res) => {
+  try {
+    while (variables.meanPrice === 0) await sleep(200);
+
+    res.send({ message: variables.meanPrice });
   } catch (e) {
     handleError(res, e);
   }
