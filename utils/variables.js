@@ -7,7 +7,7 @@ const { moveDecimalDotString } = require("./numbersStrings");
 
 module.exports = {
   get latestSinglePrice() {
-    return this.prices[0] || 0;
+    return prices[0] || 0;
   },
 
   get meanPrice() {
