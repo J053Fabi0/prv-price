@@ -7,7 +7,7 @@
     "stop": "pm2 stop prvprice",
     "status": "pm2 status prvprice",
     "create": "pm2 start index.js --name prvprice && pm2 stop prvprice",
-    "start": "pm2 stop prvprice && pm2 start index.js --name prvprice --attach",
+    "start": "pm2 stop prvprice && pm2 start index.js --name prvprice && pm2 logs prvprice",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
