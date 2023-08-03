@@ -1,6 +1,5 @@
 const variables = require("./utils/variables");
-const { usdtPRVPair, maxPrices } = require("./utils/constants");
-const { moveDecimalDotString } = require("./utils/numbersStrings");
+const { usdtPRVPair } = require("./utils/constants");
 const getFullpDEXStatusV3 = require("./utils/getFullpDEXStatusV3");
 
 const sleep = require("util").promisify(setTimeout);

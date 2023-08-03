@@ -1,5 +1,8 @@
 const axios = require("axios");
 
+const { usdtPRVPair } = require("./constants");
+
+// 0 means latest block
 module.exports = async (height = 0) => {
   const options = {
     method: "post",
@@ -12,9 +15,9 @@ module.exports = async (height = 0) => {
         {
           BeaconHeight: height,
           Filter: {
-            Key: "All",
+            Key: "PoolPair",
             Verbosity: 0,
-            ID: "",
+            ID: usdtPRVPair,
           },
         },
       ],

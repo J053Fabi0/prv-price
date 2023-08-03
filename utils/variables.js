@@ -28,10 +28,7 @@ module.exports = {
   addPrice: function (usdt, prv) {
     // Insert the new price at the start of the prices array, and if the new size is greater than maxPrices,
     // pop the last price.
-    if (
-      prices.unshift(parseFloat(moveDecimalDotString(Math.floor((usdt * 1_000 * prvDivider) / prv), -9))) >
-      maxPrices
-    )
+    if (prices.unshift(parseFloat(moveDecimalDotString(Math.floor((usdt * prvDivider) / prv), -9))) > maxPrices)
       prices.pop();
 
     dirty = true;
